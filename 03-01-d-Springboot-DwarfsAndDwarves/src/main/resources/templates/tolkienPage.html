@@ -1,17 +1,24 @@
-<html lang="eng">
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://thymeleaf.org">
 	<head>
 		<meta charset="utf-8"></meta>
-		<title>Dwarves</title>
+		<title th:text="${pageTitle}">Generic Page Title</title>
 		<meta name="viewport" content="width=device-width, initial-scale=1"></meta>
 		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"></link>
 		<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
 	</head>
 	<body>
+	<nav th:replace="layout/nav :: navFragment">
+	</nav>
 		<div class="jumbotron text-center">
 	 		<h1>The Company of Thorin</h1>
 		</div>
 		<br/><br/>
 		<div class="container">
+		<div class="row">
+  				<div class="col-sm-8">
+  				<p><a href="/">Go back</a></p></div>
+  				</div>
 	  		<table class="table table-striped">
 			    <thead>
 			      <tr>
@@ -20,9 +27,9 @@
 			      </tr>
 			    </thead>
 			     <tbody>
-			      <tr>
-			        <td>Thorin</td>
-			        <td><img src = "../static/dwarf-images/Thorin.png"/> </td>
+			      <tr th:each="dwarf : ${dwarves}">
+			        <td th:text="${dwarf.name}">Thorin</td>
+			        <td><img src = "../static/Thorin.png" th:src="@{/} + ${dwarf.image}"  width="100" height="130"/> </td>
 			      </tr>
 			      </tbody>
     		</table>

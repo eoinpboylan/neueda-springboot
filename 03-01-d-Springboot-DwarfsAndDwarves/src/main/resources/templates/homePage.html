@@ -1,5 +1,4 @@
 <!DOCTYPE html>
-
 <html lang="en" xmlns:th="http://thymeleaf.org">
 	<head>
 		<meta charset="utf-8"></meta>
@@ -11,29 +10,20 @@
 	<body>
 	<nav th:replace="layout/nav :: navFragment">
 	</nav>
+
 		<div class="jumbotron text-center">
-	 		<h1>The Seven Dwarfs</h1>
+	 		<h1>Dwarfs vs Dwarves</h1>
 		</div>
 		<br/><br/>
 		<div class="container">
-		<div class="row">
-  				<div class="col-sm-8">
-  				<p><a href="/">Go back</a></p></div>
-  				</div>
-	  		<table class="table table-striped">
-			    <thead>
-			      <tr>
-			        <th>Name</th>
-			        <th>Picture</th>
-			      </tr>
-			    </thead>
-			    <tbody>
-			      <tr th:each="dwarf : ${dwarfs}"> 
-			        <td th:text="${dwarf.name}">Sleepy</td>
-			        <td><img src = "../static/Sleepy.png" th:src="@{/} + ${dwarf.image}" width="100" height="130"/> </td>
-			      </tr>
-			      </tbody>
-    		</table>
-    	</div>
+		<p>There are major differences between Dwarfs and Dwarves.  Dwarves are a proud people, confuse the two at your own risk!<br/><br/>Click on Snow White to see Dwarfs, and Gandalf to see Dwarves.</p>
+	  		<br/>
+  				
+				
+  				<a href="/disneyPage"> <img src="SnowWhite.png" alt="Snow White" height="500" width="400" class="img-responsive" align="left"/> </a>
+ 				<a href="/tolkienPage"> <img src="Gandalf.jpg" alt="Gandalf" height="500" width="400" class="img-responsive" align="right"/> </a>
+ 				
+			</div>
+ 				
 	</body>
 </html>
