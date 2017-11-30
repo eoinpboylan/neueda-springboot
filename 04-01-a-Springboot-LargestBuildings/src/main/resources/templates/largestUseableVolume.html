@@ -30,11 +30,11 @@
 			    </thead>
 			    <tbody>
 			      <tr th:each="building : ${buildings}"> 
-			        <td th:text="${building.name}">Sleepy</td>
-			        <td th:text="${building.country}">Sleepy</td>
-			        <td th:text="${building.city}">Sleepy</td>
-			        <td th:text="${building.volume}">Sleepy</td>
-			        <td><img src = "../static/Sleepy.png" th:src="@{/} + ${dwarf.image}" width="100" height="130"/> </td>
+			        <td th:text="${building.name}">Generic Text</td>
+			        <td th:text="${building.country}">Generic Text</td>
+			        <td th:text="${building.city}">Generic Text</td>
+			        <td th:text="${building.volume}">Generic Text</td>
+			        <td><img src = "../static/BoeingEverettFactory.png" th:src="@{/} + ${building.image}" width="300" height="200"/> </td>
 			      </tr>
 			      </tbody>
     		</table>

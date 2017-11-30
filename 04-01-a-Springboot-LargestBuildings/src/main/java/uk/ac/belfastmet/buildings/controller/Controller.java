@@ -49,7 +49,15 @@ public class Controller {
 	} 
 	
 
+	@GetMapping("/largestUseableVolume")
+	//displays footprint array
+	public String volume(Model model) {
+		this.buildingService = new BuildingService();
+		model.addAttribute("buildings", this.buildingService.getBuildingsByUseableVolume()); 
+		
+		return "largestUseableVolume"; //displays largestUseableVolume page
 	
+	} 
 	
 
 	

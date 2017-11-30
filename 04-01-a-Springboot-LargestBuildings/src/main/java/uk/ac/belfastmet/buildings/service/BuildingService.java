@@ -6,13 +6,14 @@ import org.springframework.stereotype.Service;
 
 import uk.ac.belfastmet.buildings.domain.FloorArea;
 import uk.ac.belfastmet.buildings.domain.Footprint;
+import uk.ac.belfastmet.buildings.domain.UseableVolume;
 
 @Service
 public class BuildingService {
 	
 	private ArrayList<FloorArea> buildingsByArea;
-	private ArrayList<FloorArea> buildingsByFootprint;
-	private ArrayList<FloorArea> buildingsByVolume;
+	private ArrayList<Footprint> buildingsByFootprint;
+	private ArrayList<UseableVolume> buildingsByVolume;
 	
 	public BuildingService() {
 		super();
@@ -60,7 +61,7 @@ public class BuildingService {
 		buildings.add(boeingFactory);
 		Footprint michelinCenter = new Footprint("Michelin Distribution Center", "United States of America", "Spartanburg, South Carolina", "371,612meters squared", "MichelinDistributionCenter.jpg");
 		buildings.add(michelinCenter);
-		Footprint greatMosque = new Footprint("Great Mosque of MEcca", "Saudi Arabia", "Hijaz-Saudi Arabia", "356,000meters squared", "GreatMosqueOfMecca.jpg");
+		Footprint greatMosque = new Footprint("Great Mosque of Mecca", "Saudi Arabia", "Hijaz-Saudi Arabia", "356,000meters squared", "GreatMosqueOfMecca.jpg");
 		buildings.add(greatMosque);
 		Footprint nikeLogistics = new Footprint("Nike North America Logistics Center", "United States of America", "Memphis, Tennessee", "260,000meters squared", "NikeAmericaDistributionCenter.jpg");
 		buildings.add(nikeLogistics);
@@ -76,30 +77,30 @@ public class BuildingService {
 			
 	}
 	
-	public ArrayList<Footprint> getBuildingsByFootprint(){
-		//will return an array of buildings with the largest floor area
-		ArrayList<Footprint> buildings = new ArrayList<Footprint>();
+	public ArrayList<UseableVolume> getBuildingsByUseableVolume(){
+		//will return an array of buildings with the largest by useable volume
+		ArrayList<UseableVolume> buildings = new ArrayList<UseableVolume>();
 		//creates a new ArrayList called buildings, populated below
-		Footprint aalsmeerAuction = new Footprint("Aalsmeer Flower Auction", "Netherlands", "Aalsmeer", "518,000meters squared", "AalsmeerFlowerAuction.jpg");
-		buildings.add(aalsmeerAuction);
-		Footprint mallDubai = new Footprint("Mall of Dubai", "United Arab Emirates", "Dubai", "500,000meters squared", "MallOfDubai.jpg");
-		buildings.add(mallDubai);
-		Footprint teslaFactory = new Footprint("Tesla Factory", "United States of America", "Fremont, California", "427,354meters squared", "TeslaFactory.jpg");
-		buildings.add(teslaFactory);
-		Footprint boeingFactory = new Footprint("Boeing Everett Factory", "United States of America", "Everett, Washington", "398,000meters squared", "BoeingEverettFactory.jpg");
+		UseableVolume boeingFactory = new UseableVolume("Boeing Everett Factory", "United States of America", "Everett, Washington", "13.3million metres cubed", "BoeingEverettFactory.jpg");
 		buildings.add(boeingFactory);
-		Footprint michelinCenter = new Footprint("Michelin Distribution Center", "United States of America", "Spartanburg, South Carolina", "371,612meters squared", "MichelinDistributionCenter.jpg");
-		buildings.add(michelinCenter);
-		Footprint greatMosque = new Footprint("Great Mosque of MEcca", "Saudi Arabia", "Hijaz-Saudi Arabia", "356,000meters squared", "GreatMosqueOfMecca.jpg");
+		UseableVolume greatMosque = new UseableVolume("Great Mosque of Mecca", "Saudi Arabia", "Hijaz-Saudi Arabia", "8milion metres cubed", "GreatMosqueOfMecca.jpg");
 		buildings.add(greatMosque);
-		Footprint nikeLogistics = new Footprint("Nike North America Logistics Center", "United States of America", "Memphis, Tennessee", "260,000meters squared", "NikeAmericaDistributionCenter.jpg");
-		buildings.add(nikeLogistics);
-		Footprint johnDeereDistribution = new Footprint("John Deere North American Parts Distribution Center", "United States of America", "Milan, Illinois", "246,000meters squared", "JohnDeereNorthAmericanPartsDistributionCenter.jpg");
-		buildings.add(johnDeereDistribution);
-		Footprint mitsubishiAmerica = new Footprint("Mitsubishi Motors North America", "United States of America", "Normal, Illinois", "220,000meters squared", "MitsubishiMotorsNorthAmerica.jpg");
-		buildings.add(mitsubishiAmerica);
-		Footprint indonesiaConvention = new Footprint("Indonesia Convention Exhibition", "Indonesia", "Bumi Serpong Damai", "220,000meters squared", "IndonesiaConventionExhibition.jpg");
-		buildings.add(indonesiaConvention);
+		UseableVolume jeanLuc = new UseableVolume("Jean-Luc Lagardere Plant", "France", "Toulouse-Blagnac", "5.6million metres cubed", "JeanLucLagarderePlant.jpg");
+		buildings.add(jeanLuc);
+		UseableVolume aerium = new UseableVolume("Aerium", "Germany", "Halbe, Brandenburgn", "5.2million metres cubed", "Aerium.png");
+		buildings.add(aerium);
+		UseableVolume meyerWerftDockhalle = new UseableVolume("Meyer Werft Dockhalle 2", "Germany", "Papenburg, Niedersachsen", "4.72million metres cubed", "Meyer Werft Dockhalle 2.jpg");
+		buildings.add(meyerWerftDockhalle );
+		UseableVolume boeingWingCenter = new UseableVolume("Boeing Composite Wing Center", "United States of America", "Everett, Washington", "3.7million metres cubed", "BoeingCompositeWingCenter.jpg");
+		buildings.add(boeingWingCenter);
+		UseableVolume nasaVehicleAssembly = new UseableVolume("NASA Vehicle Assembly Building", "United States of America", "Brevard County, Florida", "3.6million metres cubed", "NASAVehicleAssemblyBuilding.jpg");
+		buildings.add(nasaVehicleAssembly);
+		UseableVolume theO2 = new UseableVolume("The O2", "United Kingdom", "London", "2.79million metres cubed", "TheO2.jpg");
+		buildings.add(theO2);
+		UseableVolume tescoIreland = new UseableVolume("Tesco Ireland Distribution Centre", "Ireland", "Donabate, Fingal", "1.55million metres cubed", "TescoIrelandDistributionCentre.jpg");
+		buildings.add(tescoIreland);
+		UseableVolume targetImportWarehouse = new UseableVolume("Target Import Warehouse", "United States", "Savannah, Georgia", "1.5million metres cubed", "TargetImportWarehouse.png");
+		buildings.add(targetImportWarehouse);
 		
 		
 			return buildings;
