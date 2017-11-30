@@ -44,7 +44,7 @@ public class Controller {
 		this.buildingService = new BuildingService();
 		model.addAttribute("buildings", this.buildingService.getBuildingsByFootprint()); 
 		
-		return "largestFloorArea"; //displays largestFootprint page
+		return "largestFootprint"; //displays largestFootprint page
 	
 	} 
 	
