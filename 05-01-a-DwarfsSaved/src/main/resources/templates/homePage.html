@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://thymeleaf.org">
+	<head>
+		<meta charset="utf-8"></meta>
+		<title th:text="${pageTitle}">Generic Page Title</title>
+		<meta name="viewport" content="width=device-width, initial-scale=1"></meta>
+		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"></link>
+		<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+	</head>
+	<body>
+	<nav th:replace="layout/nav :: navFragment">
+	</nav>
+
+		<div class="jumbotron text-center">
+	 		<h1>Dwarfs vs Dwarves</h1>
+		</div>
+		<br/><br/>
+		<div class="container">
+		<p>There are major differences between Dwarfs and Dwarves.  Dwarves are a proud people, confuse the two at your own risk!<br/><br/>Click on Snow White to see Dwarfs, and Gandalf to see Dwarves.</p>
+	  		<br/>
+  				
+				
+  				<a href="/disneyPage"> <img src="SnowWhite.png" alt="Snow White" height="500" width="400" class="img-responsive" align="left"/> </a>
+ 				<a href="/tolkienPage"> <img src="Gandalf.jpg" alt="Gandalf" height="500" width="400" class="img-responsive" align="right"/> </a>
+ 				
+			</div>
+ 				
+	</body>
+</html>
