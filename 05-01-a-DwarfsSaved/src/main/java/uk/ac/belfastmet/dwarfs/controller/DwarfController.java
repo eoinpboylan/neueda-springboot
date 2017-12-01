@@ -11,12 +11,12 @@ import uk.ac.belfastmet.dwarfs.repositories.DwarfRepository;
 @Controller
 @RequestMapping("/")
 
-public class DwarfsController {
+public class DwarfController {
 	
 	@Autowired
 	DwarfRepository dwarfRepository;
 	
-	public DwarfsController(DwarfRepository dwarfRepository) {
+	public DwarfController(DwarfRepository dwarfRepository) {
 		super();
 		this.dwarfRepository = dwarfRepository;
 	}
@@ -32,7 +32,7 @@ public class DwarfsController {
 	@GetMapping("/disneyPage")
 	public String disney(Model model) {
 		model.addAttribute("pageTitle", "Disney!");
-		model.addAttribute("dwarfs", dwarfRepository.findByAuthor("Disney"));
+		model.addAttribute("dwarfs", dwarfRepository.findTop3ByAuthorOrderByName("Disney"));
 		return "disneyPage"; //displays disneyPage
 	
 	} 
@@ -40,13 +40,8 @@ public class DwarfsController {
 	@GetMapping("/tolkienPage")
 	public String tolkien(Model model) {
 		model.addAttribute("pageTitle", "Tolkien!");
-		model.addAttribute("dwarfs", dwarfRepository.findByAuthor("Tolkien"));
+		model.addAttribute("dwarfs", dwarfRepository.findByAuthorOrderByName("Tolkien"));
 		return "tolkienPage"; //displays tolkienPage
 	
-	}
-	
-
-	
-
-	
+	}	
 }

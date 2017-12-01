@@ -23,6 +23,7 @@ public class DataLoader {
 	}
 	
 	//add @PostConstruct to add to the database
+	//@PostConstruct
 	public void loadData() {
 		//function will add dwarfs to the database using a constructor
 		
@@ -35,7 +36,7 @@ public class DataLoader {
 			dwarfRepository.save(dopey);
 			Dwarf bashful = new Dwarf("Bashful", "Disney", "Bashful.png");
 			dwarfRepository.save(bashful);
-			Dwarf sneezy = new Dwarf("Sneezy", "Disney", "Sneezyy.png");
+			Dwarf sneezy = new Dwarf("Sneezy", "Disney", "Sneezy.png");
 			dwarfRepository.save(sneezy);
 			Dwarf doc = new Dwarf("Doc", "Disney", "Doc.png");
 			dwarfRepository.save(doc);

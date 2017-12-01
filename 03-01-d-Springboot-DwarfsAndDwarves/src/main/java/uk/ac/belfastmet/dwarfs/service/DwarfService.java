@@ -28,7 +28,7 @@ public class DwarfService {
 		dwarfs.add(dopey);
 		Dwarf bashful = new Dwarf("Bashful", "Disney", "Bashful.png");
 		dwarfs.add(bashful);
-		Dwarf sneezy = new Dwarf("Sneezy", "Disney", "Sneezyy.png");
+		Dwarf sneezy = new Dwarf("Sneezy", "Disney", "Sneezy.png");
 		dwarfs.add(sneezy);
 		Dwarf doc = new Dwarf("Doc", "Disney", "Doc.png");
 		dwarfs.add(doc);
