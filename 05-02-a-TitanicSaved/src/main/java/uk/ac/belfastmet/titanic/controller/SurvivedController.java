@@ -9,13 +9,13 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import uk.ac.belfastmet.titanic.repository.PassengerRepository;
 
 @Controller
-@RequestMapping("/passengersPage")
-public class PassengerController {
+@RequestMapping("/survivedPage")
+public class SurvivedController {
 
 	@Autowired
 	PassengerRepository passengerRepository;
 	
-	public PassengerController(PassengerRepository passengerRepository) {
+	public SurvivedController(PassengerRepository passengerRepository) {
 		super();
 		this.passengerRepository = passengerRepository;
 	}
@@ -23,13 +23,15 @@ public class PassengerController {
 
 	
 	@GetMapping("/")
-	public String passenger(Model model) {
-		model.addAttribute("pageTitle", "Passengers");
-		model.addAttribute("passengers", passengerRepository.findByOrderByName());
-		return "passengersPage"; //displays passengersPage
+	public String survived(Model model) {
+		model.addAttribute("pageTitle", "Survivors");
+		
+		model.addAttribute("passengers", passengerRepository.findBySurvivedOrderByName(1));
+		return "survivedPage"; //displays survivedPage
 	
 	} 
 	
 	
 	
 }
+

@@ -11,7 +11,7 @@ public class Passenger {
 	@GeneratedValue
 	private Integer passengerID;
 	private Integer survived;
-	private Integer pClass;
+	private Integer pclass;
 	private String name;
 	private String sex;
 	private Double age;
@@ -33,7 +33,7 @@ public class Passenger {
 		super();
 		this.passengerID = passengerID;
 		this.survived = survived;
-		this.pClass = pClass;
+		this.pclass = pClass;
 		this.name = name;
 		this.sex = sex;
 		this.age = age;
@@ -66,13 +66,13 @@ public class Passenger {
 	}
 
 
-	public int getpClass() {
-		return pClass;
+	public int getPclass() {
+		return pclass;
 	}
 
 
-	public void setpClass(int pClass) {
-		this.pClass = pClass;
+	public void setPclass(int pClass) {
+		this.pclass = pClass;
 	}
 
 
