@@ -15,7 +15,9 @@ public class Cereal {
 	@Id
 	@GeneratedValue
 	private Integer cerealId;
+	@NotEmpty
 	private String manufacturer;
+	@NotEmpty
 	private String name;
 	private Integer energy;
 	private Integer calories;
@@ -32,26 +34,6 @@ public class Cereal {
 	
 	public Cereal() {
 		super();
-	}
-	
-	public Cereal(Integer cerealId, String manufacturer, String name, Integer energy, Integer calories, Double protein,
-			Double carbohydrates, Double sugars, Double fat, Double saturates, Double fibre, String sodium, String salt,
-			Double iron) {
-		super();
-		this.cerealId = cerealId;
-		this.manufacturer = manufacturer;
-		this.name = name;
-		this.energy = energy;
-		this.calories = calories;
-		this.protein = protein;
-		this.carbohydrates = carbohydrates;
-		this.sugars = sugars;
-		this.fat = fat;
-		this.saturates = saturates;
-		this.fibre = fibre;
-		this.sodium = sodium;
-		this.salt = salt;
-		this.iron = iron;
 	}
 
 	public Integer getCerealId() {
@@ -165,6 +147,7 @@ public class Cereal {
 	public void setIron(Double iron) {
 		this.iron = iron;
 	}
+	
 	
 
 }

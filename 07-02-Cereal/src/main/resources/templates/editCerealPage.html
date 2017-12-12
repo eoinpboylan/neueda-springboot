@@ -22,15 +22,17 @@
   				</div>
   				
 	  			<form class="form-horizontal" th:action="@{/cereal/save}" th:object="${cereal}" method="post">
+	  			
+	  			
+	  			<!-- need this!  Important! -->
+	  			<input type="hidden" th:field="${cereal.cerealId}" class="form control" />
 	  		
-	  			<input type="hidden" th:field="${cereal.cerealId}" />
-	  			x
 	  		<table class="table table-striped">
 	  		
 			    <thead>
 			      <tr>
-					<th>Nutrition</th>
-					<th>Value</th>
+					<th>Parameter to Add</th>
+					<th>New Value</th>
 				  </tr>
 			    </thead>
 			    <tbody>
