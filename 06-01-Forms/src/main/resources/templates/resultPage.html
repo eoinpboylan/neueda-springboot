@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="utf-8"></meta>
+		<title th:text="${pageTitle}">Generic Page Title</title>
+		<meta name="viewport" content="width=device-width, initial-scale=1"></meta>
+		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"></link>
+		<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+	</head>
+	<body>
+	
+
+		<div class="jumbotron text-center">
+	 		<h1>Results</h1>
+		</div>
+		<br/><br/>
+		<div class="container">
+		
+		<a href="/">Go Back</a>
+		
+	  		<br/>
+	  		<br/>
+	  		<p th:text = "${'Hello, ' + firstname  + ' ' + lastname + '.  Your Gender is: ' + gender}">Testy McTesterson </p><br/>
+	  		
+	
+	</div>
+ 				
+	</body>
+</html>
