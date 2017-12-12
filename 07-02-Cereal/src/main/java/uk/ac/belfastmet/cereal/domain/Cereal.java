@@ -3,6 +3,8 @@ package uk.ac.belfastmet.cereal.domain;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
 
+import org.hibernate.validator.constraints.NotEmpty;
+
 import javax.persistence.Entity;
 
 @Entity
@@ -12,10 +14,11 @@ public class Cereal {
 
 	@Id
 	@GeneratedValue
+	private Integer cerealId;
 	private String manufacturer;
 	private String name;
-	private Double energy;
-	private Double calories;
+	private Integer energy;
+	private Integer calories;
 	private Double protein;
 	private Double carbohydrates;
 	private Double sugars;
@@ -23,6 +26,7 @@ public class Cereal {
 	private Double saturates;
 	private Double fibre;
 	private String sodium;
+	@NotEmpty
 	private String salt;
 	private Double iron;
 	
@@ -30,10 +34,11 @@ public class Cereal {
 		super();
 	}
 	
-	public Cereal(String manufacturer, String name, Double energy, Double calories, Double protein,
+	public Cereal(Integer cerealId, String manufacturer, String name, Integer energy, Integer calories, Double protein,
 			Double carbohydrates, Double sugars, Double fat, Double saturates, Double fibre, String sodium, String salt,
 			Double iron) {
 		super();
+		this.cerealId = cerealId;
 		this.manufacturer = manufacturer;
 		this.name = name;
 		this.energy = energy;
@@ -47,6 +52,14 @@ public class Cereal {
 		this.sodium = sodium;
 		this.salt = salt;
 		this.iron = iron;
+	}
+
+	public Integer getCerealId() {
+		return cerealId;
+	}
+
+	public void setCerealId(Integer cerealId) {
+		this.cerealId = cerealId;
 	}
 
 	public String getManufacturer() {
@@ -65,19 +78,19 @@ public class Cereal {
 		this.name = name;
 	}
 
-	public Double getEnergy() {
+	public Integer getEnergy() {
 		return energy;
 	}
 
-	public void setEnergy(Double energy) {
+	public void setEnergy(Integer energy) {
 		this.energy = energy;
 	}
 
-	public Double getCalories() {
+	public Integer getCalories() {
 		return calories;
 	}
 
-	public void setCalories(Double calories) {
+	public void setCalories(Integer calories) {
 		this.calories = calories;
 	}
 
