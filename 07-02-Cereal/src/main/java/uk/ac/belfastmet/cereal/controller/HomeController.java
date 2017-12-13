@@ -9,6 +9,7 @@ import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 
 import uk.ac.belfastmet.cereal.domain.Cereal;
 import uk.ac.belfastmet.cereal.repositories.CerealRepository;
@@ -55,8 +56,9 @@ public class HomeController {
 	}
 	
 	@GetMapping("/cereal/delete/{cerealId}") //deletes a record
-	public String editCereal(@PathVariable("cerealId") Integer cerealId) {
+	public String deleteCereal(@PathVariable("cerealId") Integer cerealId, RedirectAttributes redirectAttrs) {
 		cerealRepository.delete(cerealId);
+		redirectAttrs.addFlashAttribute("message", "Entry Deleted Successfully");
 		return "redirect:/";
 	}
 	
