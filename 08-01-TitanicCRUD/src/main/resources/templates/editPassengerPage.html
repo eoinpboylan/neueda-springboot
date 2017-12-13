@@ -1,0 +1,81 @@
+	<!DOCTYPE html>
+
+<html lang="en" xmlns:th="http://thymeleaf.org">
+	<head>
+		<meta charset="utf-8"></meta>
+		<title th:text="${pageTitle}">Generic Page Title</title>
+		<meta name="viewport" content="width=device-width, initial-scale=1"></meta>
+		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"></link>
+		<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+	</head>
+	<body>
+	<nav th:replace="layout/nav :: navFragment">
+	</nav>
+		<div class="jumbotron text-center">
+	 		<h1 th:text="${pageHeading}">Generic Page Header</h1>
+		</div>
+		<br/><br/>
+		<div class="container">
+  				
+	  			<form class="form-horizontal" th:action="@{/passenger/save}" th:object="${passenger}" method="post">
+	  			
+	  			
+	  			<!-- need this!  Important! -->
+	  			<input type="hidden" th:field="${passenger.passengerid}" class="form control" />
+	  		
+	  		<table class="table table-striped">
+	  		
+			    <thead>
+			      <tr>
+					<th>Parameter to Edit</th>
+					<th>New Value</th>
+				  </tr>
+			    </thead>
+			    <tbody>
+			     <tr>
+			        <td>Passenger Name</td>
+			        <td> <input type="text" class="form control" th:field="${passenger.name}"/></td>
+			     </tr>
+			     <tr>
+			        <td>Passenger Age</td>
+			        <td> <input type="text" class="form control" th:field="${passenger.age}"/></td>
+			      </tr>
+			      <tr>
+			      	<td>Passenger Sex</td>
+			      	<td> <input type="text" class="form control" th:field="${passenger.sex}"/></td>
+			      </tr>  
+    			  <tr>
+			      	<td>Fare</td>
+			      	<td> <input type="text" class="form control" th:field="${passenger.fare}"/></td>
+			      </tr> 
+			      <tr>
+			        <td>Cabin</td>
+			        <td> <input type="text" class="form control" th:field="${passenger.cabin}"/></td>
+			      </tr>  
+			      <tr>
+			        <td>Embarked</td>
+			        <td> <input type="text" class="form control" th:field="${passenger.embarked}"/></td>
+			      </tr>
+			      <tr>
+			      <td>Passenger Class</td> 
+			      <td> <input type="text" class="form control" th:field="${passenger.pclass}"/></td>
+			      </tr>
+			      <tr>   
+			        <td>Ticket Number</td>
+			        <td> <input type="text" class="form control" th:field="${passenger.ticket}"/></td>
+			      </tr>  
+			      <tr>
+			        <td>Parent or Child?</td>
+			        <td> <input type="text" class="form control" th:field="${passenger.parch}"/></td>
+			      </tr>
+			      <tr>
+			        <td>Sibling / Spouse</td>
+			        <td> <input type="text" class="form control" th:field="${passenger.sibSp}"/></td>
+			      </tr>
+			      </tbody>
+    		</table>
+    		<button type="submit" class="btn btn-primary">Save</button>
+		</form>
+    	</div><br/><br/>
+	</body>
+</html>
