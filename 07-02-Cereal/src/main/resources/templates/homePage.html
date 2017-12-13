@@ -31,9 +31,9 @@
 			      <tr th:each="cereals : ${cereal}"> 
 			        <td th:text="${cereals.name}">Generic Text</td>
 			        <td th:text="${cereals.manufacturer}">Generic Text</td>
-			        <td><a href="#" th:href="@{cereal/view/} + ${cereal.cerealId}">View</a> 
-						<a href="#" th:href="@{cereal/edit/} + ${cereal.cerealId}">Edit</a> 
-						<a href="#" th:href="@{cereal/delete/} + ${cereal.cerealId}">Delete</a> </td>
+			        <td><a href="#" th:href="@{cereal/view/} + ${cereals.cerealId}">View</a> 
+						<a href="#" th:href="@{cereal/edit/} + ${cereals.cerealId}">Edit</a> 
+						<a href="#" th:href="@{cereal/delete/} + ${cereals.cerealId}">Delete</a> </td>
 			       
 			      </tr>
 			      </tbody>
