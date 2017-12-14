@@ -7,7 +7,20 @@
 		<meta name="viewport" content="width=device-width, initial-scale=1"></meta>
 		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"></link>
 		<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
-	</head>
+		
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+  <script>
+	$(document).ready(function() {
+			$("#mySearch").on("keyup",function() {
+				var value = $(this).val().toLowerCase();
+				$("#myTable tr").filter(function() {
+					$(this).toggle($(this).text().toLowerCase().indexOf(value) > -1)
+					});
+				});
+			});
+</script>
+
+</head>
 	<body>
 	<nav th:replace="layout/nav :: navFragment">
 	</nav>
@@ -16,6 +29,9 @@
 		</div>
 		<br/><br/>
 		<div class="container">
+		
+<input class="form-control" id="mySearch" type="text"
+			placeholder="Search.." ></input><br/>
 		<div class="row">
   				<div>
   				<p align="right"><a href="/add"> <button type="button" class="btn btn-primary">Add Passenger</button></a></p>
@@ -27,7 +43,7 @@
 			        <th>Passenger Name</th>
 			      </tr>
 			    </thead>
-			    <tbody>
+			    <tbody id="myTable">
 			      <tr th:each="passenger : ${passengers}"> 
 			        <td th:text="${passenger.name}">Generic Text</td>
 			      	<td><a href="#" th:href="@{/view} + '/' + ${passenger.passengerid}"><button type="button" class="btn btn-primary">View</button></a> 
