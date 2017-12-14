@@ -18,40 +18,21 @@
 		<div class="container">
 		<div class="row">
   				<div>
-  				<p align="right"><a href="passenger/add/"> <button type="button" class="btn btn-primary">Add Passenger</button></a></p>
+  				<p align="right"><a href="/add"> <button type="button" class="btn btn-primary">Add Passenger</button></a></p>
   				<p><a href="/">Go back</a></p></div>
   				</div>
 	  		<table class="table table-striped">
 			    <thead>
 			      <tr>
 			        <th>Passenger Name</th>
-			        <th>Passenger Age</th>
-			        <th>Passenger Sex</th>			        
-			        <th>Fare (£)</th>
-			        <th>Cabin</th>
-			        <th>Embarked</th>  
-			        <th>Class</th>
-			        <th>Ticket Number</th>
-			        <th>Parent and Child</th>
-			        <th>Sibling or Spouse</th>
-			        <th>View/Edit/Delete</th>
 			      </tr>
 			    </thead>
 			    <tbody>
 			      <tr th:each="passenger : ${passengers}"> 
 			        <td th:text="${passenger.name}">Generic Text</td>
-			        <td th:text="${passenger.age}">Generic Text</td>
-			        <td th:text="${passenger.sex}">Generic Text</td>			     
-			        <td th:text="${passenger.fare}">Generic Text</td>
-			        <td th:text="${passenger.cabin}">Generic Text</td>
-			        <td th:text="${passenger.embarked}">Generic Text</td>
-			        <td th:text="${passenger.pclass}">Generic Text</td>
-			        <td th:text="${passenger.ticket}">Generic Text</td>
-			        <td th:text="${passenger.parch}">Generic Text</td>
-			        <td th:text="${passenger.sibSp}">Generic Text</td>
-			      	<td><a href="#" th:href="@{/view} + ${passenger.passengerid}"><button type="button" class="btn btn-primary">View</button></a> 
-						<a href="#" th:href="@{/edit} + ${passenger.passengerid}"><button type="button" class="btn btn-primary">Edit</button></a> 
-						<a href="#" th:href="@{/delete} + ${passenger.passengerid}"><button type="button" class="btn btn-danger">Delete</button></a> </td>
+			      	<td><a href="#" th:href="@{/view} + '/' + ${passenger.passengerid}"><button type="button" class="btn btn-primary">View</button></a> 
+						<a href="#" th:href="@{/edit} + '/' + ${passenger.passengerid}"><button type="button" class="btn btn-primary">Edit</button></a> 
+						<a href="#" th:href="@{/delete} + '/' + ${passenger.passengerid}"><button type="button" class="btn btn-danger">Delete</button></a> </td>
 			      </tr>
 			      </tbody>
     		</table>
