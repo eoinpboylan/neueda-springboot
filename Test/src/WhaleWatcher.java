@@ -43,7 +43,7 @@ public class WhaleWatcher {
 		
 		System.out.println();
 		System.out.print("The heaviest whale is: ");
-		String heaviestWhale = getHaviestWhale(whales);
+		String heaviestWhale = getHeaviestWhale1(whales);
 		System.out.println("The " + heaviestWhale + " whale");
 			
 		}
@@ -66,19 +66,25 @@ public class WhaleWatcher {
 		return fastestWhale;
 	}
 	
-	public static String getHaviestWhale(ArrayList<Whale> whales) {//only returns one heavy whale when should return two
+	public static String getHeaviestWhale1(ArrayList<Whale> whales) {//only returns one heavy whale when should return two
 		
 		int maxWeight = 0;
-		String heaviestWhale = "";
+		String heaviestWhale1 = "";
 		for(int i = 0; i < whales.size(); i++) {
 			
 			Whale currentWhale = whales.get(i);
-			if(currentWhale.getWeight() > maxWeight) {
+			if(currentWhale.getWeight() >= maxWeight) {
 				maxWeight= currentWhale.getWeight();
-				heaviestWhale = currentWhale.getName();	
+				heaviestWhale1 = currentWhale.getName();	
 			}
+		
+		}return heaviestWhale1;
+		
+		
+	
 		}
 		
-		return heaviestWhale;
 	}
-}
+	
+
+
