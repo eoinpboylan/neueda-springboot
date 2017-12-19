@@ -1,3 +1,4 @@
+
 package uk.ac.belfastmet.weather.controller;
 
 import org.springframework.stereotype.Controller;

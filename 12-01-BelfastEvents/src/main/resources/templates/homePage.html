@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://thymeleaf.org">
+	<head>
+		<meta charset="utf-8"></meta>
+		<title th:text="${pageTitle}">Generic Page Title</title>
+		<meta name="viewport" content="width=device-width, initial-scale=1"></meta>
+		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"></link>
+		<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+	</head>
+	<body>
+		<nav th:replace="layout/nav :: navFragment">
+		</nav>
+
+		<div class="jumbotron text-center">
+			
+	 		<h1 th:text="${pageHeader}">Weather</h1>
+		</div>
+		<br/>
+		
+	  		<br/>
+	  	<div class="container">
+		<table class="table table-striped">
+			    <thead>
+			      <tr>
+			        <th>Event Name</th>
+			        <th>Event Location</th>
+			        <th>Event Date</th>
+			        <th>View Event</th>
+			      </tr>
+			    </thead>
+			    <tbody id="myTable">
+			      <tr th:each="event : ${events}"> 
+			        <td th:text="${event.title}">Generic Text</td>	
+			        <td th:text="${event.venue}">Generic Text</td>		     
+			        <td th:text="${event.startDate}">Generic Text</td>	
+			        <td><a href="#" th:href="@{/event} + '/' + ${event.identifier}"><button type="button" class="btn btn-primary">View</button></a></td>
+			        </tr>
+			      </tbody>
+    		</table>
+ 				<form>
+ 					
+ 				</form>
+			</div>		
+	</body>
+</html>
