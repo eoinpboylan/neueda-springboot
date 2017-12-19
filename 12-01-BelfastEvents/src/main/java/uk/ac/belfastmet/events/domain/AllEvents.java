@@ -22,6 +22,6 @@ public class AllEvents {
 		this.allEvents = allEvents;
 	}
 	
-	
+
 
 }
