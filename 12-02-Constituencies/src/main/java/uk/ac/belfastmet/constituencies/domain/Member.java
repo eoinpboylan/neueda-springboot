@@ -20,8 +20,8 @@ public class Member {
 	private String memberLastName;
 	@JsonProperty("MemberSortName")
 	private String memberSortName;
-	@JsonProperty("Party")
-	private String party;
+	@JsonProperty("PartyName")
+	private String partyName;
 	@JsonProperty("PartyOrganisationId")
 	private String partyOrganisationId;
 	@JsonProperty("ConstituencyName")

@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://thymeleaf.org">
+	<head>
+		<meta charset="utf-8"></meta>
+		<title th:text="${pageTitle}">Generic Page Title</title>
+		<meta name="viewport" content="width=device-width, initial-scale=1"></meta>
+		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"></link>
+		<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+	</head>
+	<body>
+		<nav th:replace="layout/nav :: navFragment">
+		</nav>
+
+		<div class="jumbotron text-center">
+			
+	 		<h1 th:text="${pageHeader}">Generic Header</h1>
+		</div>
+		<br/>
+		<div class="container">
+	  		<br/>
+			<img src="/Constmap.jpg" alt="Constituencies of Northern Ireland" usemap="#Map" />
+			<map name="Map" id="Map">
+			    <area alt="East Antrim" title="East Antrim" href="/constituency/1" shape="rect" coords="397,77,454,173" />
+			    <area alt="East Londonderry" title="East Londonderry" href="/constituency/3 " shape="rect" coords="299,29,225,105" />
+			    <area alt="Fermanagh And South Tyrone" title="Fermanagh And South Tyrone" href="/constituency/4" shape="rect" coords="22,218,220,300" />
+			    <area alt="Foyle" title="Foyle" href="/constituency/5" shape="rect" coords="201,60,170,92" />
+			    <area alt="Lagan Valley" title="Lagan Valley" href="/constituency/6" shape="rect" coords="351,218,394,277" />
+			    <area alt="Mid Ulster" title="Mid Ulster" href="/constituency/7" shape="rect" coords="309,110,219,219" />
+			    <area alt="Newry And Armagh" title="Newry And Armagh" href="/constituency/8" shape="rect" coords="247,267,319,358" />
+			    <area alt="North Antrim" title="North Antrim" href="/constituency/9" shape="rect" coords="386,21,323,126" />
+			    <area alt="North Down" title="North Down" href="/constituency/11" shape="rect" coords="433,180,494,211" />
+			    <area alt="South Antrim" title="South Antrim" href="/constituency/12" shape="rect" coords="318,149,408,188" />
+			    <area alt="South Down" title="South Down" href="/constituency/14" shape="rect" coords="421,282,338,368" />
+			    <area alt="Strangford" title="Strangford" href="/constituency/15" shape="rect" coords="494,294,424,225" />
+			    <area alt="Upper Bann" title="Upper Bann" href="/constituency/16" shape="rect" coords="301,231,347,278" />
+			    <area alt="West Tyrone" title="West Tyrone" href="/constituency/18" shape="rect" coords="195,124,123,211" />
+ 				<area alt="Belfast" title="Belfast" href="/belfast" shape="rect" coords="392,194,421,229" />
+			</map>
+ 				<form>
+ 					
+ 				</form>
+			</div>		
+	</body>
+</html>

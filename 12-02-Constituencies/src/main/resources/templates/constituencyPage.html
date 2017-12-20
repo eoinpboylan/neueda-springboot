@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://thymeleaf.org">
+	<head>
+		<meta charset="utf-8"></meta>
+		<title th:text="${pageTitle}">Generic Page Title</title>
+		<meta name="viewport" content="width=device-width, initial-scale=1"></meta>
+		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"></link>
+		<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+	</head>
+	<body>
+		<nav th:replace="layout/nav :: navFragment">
+		</nav>
+
+		<div class="jumbotron text-center">
+			<div th:each="member : ${members}"> 
+	 		<h1 th:text="${member.constituencyName}">Generic Header</h1></div>
+		</div>
+		<br/>
+		
+	  		<br/>
+	  	<div class="container">
+		<table class="table table-striped">
+			    <thead>
+			      <tr>
+			        <th>First Name</th>
+			        <th>Last Name</th>
+			        <th>Party</th>
+			        <th>Constituency</th>
+			      </tr>
+			    </thead>
+			    <tbody id="myTable">
+			      <tr th:each="member : ${members}"> 
+			        <td th:text="${member.memberFirstName}">Generic Text</td>
+			        <td th:text="${member.memberLastName}">Generic Text</td>	
+			        <td th:text="${member.partyName}">Generic Text</td>		     
+			        <td th:text="${member.constituencyName}">Generic Text</td>	
+			      	
+			      	<!--  <td><a href="#" th:href="@{/event} + '/' + ${event.identifier}"><button type="button" class="btn btn-primary">View</button></a></td> --> 
+			        </tr>
+			      </tbody>
+    		</table>
+ 				<form>
+ 					
+ 				</form>
+			</div>		
+	</body>
+</html>
